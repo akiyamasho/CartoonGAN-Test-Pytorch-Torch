@@ -47,4 +47,5 @@ DAVIS/
 pretrained_model/*.t7
 pretrained_model/*.pth
 model_convert/
-
+test_img/*
+test_output/*

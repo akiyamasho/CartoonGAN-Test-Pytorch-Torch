@@ -1,16 +1,18 @@
 import torch
 import os
 import numpy as np
-import argparse
+import torchvision.utils as vutils
+
 from PIL import Image
 import torchvision.transforms as transforms
 from torch.autograd import Variable
-import torchvision.utils as vutils
+
 from network.Transformer import Transformer
+import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_dir', default = 'test_img')
-parser.add_argument('--load_size', default = 450)
+parser.add_argument('--load_size', default = 3840)
 parser.add_argument('--model_path', default = './pretrained_model')
 parser.add_argument('--style', default = 'Hayao')
 parser.add_argument('--output_dir', default = 'test_output')
@@ -56,7 +58,7 @@ for files in os.listdir(opt.input_dir):
 	input_image = input_image[:, :, [2, 1, 0]]
 	input_image = transforms.ToTensor()(input_image).unsqueeze(0)
 	# preprocess, (-1, 1)
-	input_image = -1 + 2 * input_image 
+	input_image = -1 + 2 * input_image
 	if opt.gpu > -1:
 		input_image = Variable(input_image, volatile=True).cuda()
 	else:

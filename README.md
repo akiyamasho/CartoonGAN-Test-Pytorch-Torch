@@ -9,15 +9,12 @@ Pytorch and Torch testing code of [CartoonGAN](http://openaccess.thecvf.com/cont
 
 ## Getting started
 
-- Linux
-- NVIDIA GPU
-- Pytorch 0.3
-- Torch
+- Unix-based OS
+- NVIDIA GPU (optional, can bypass with `--gpu -1` option)
 
-```
-git clone https://github.com/Yijunmaverick/CartoonGAN-Test-Pytorch-Torch
-cd CartoonGAN-Test-Pytorch-Torch
-```
+
+1. Run `pip install -r requirements.txt`
+2. Create a `test_img` dir to put input files and a `test_output` dir for output files.
 
 ## Pytorch
 
@@ -50,34 +47,6 @@ sh pretrained_model/download_t7.sh
 ```
 th test.lua -input_dir YourImgDir -style Hosoda -gpu 0
 ```
-
-## Examples (Left: input, Right: output)
-
-<p>
-    <img src='test_img/in2.png' width=300 />
-    <img src='test_output/in2_Hayao.png' width=300 />
-</p>
-
-<p>
-    <img src='test_img/in3.png' width=300 />
-    <img src='test_output/in3_Hayao.png' width=300 />
-</p>
-
-<p>
-    <img src='test_img/5--26.jpg' width=300 />
-    <img src='test_output/5--26_Hosoda.jpg' width=300 />
-</p>
-
-<p>
-    <img src='test_img/7--136.jpg' width=300 />
-    <img src='test_output/7--136_Hayao.jpg' width=300 />
-</p>
-
-<p>
-    <img src='test_img/15--324.jpg' width=300 />
-    <img src='test_output/15--324_Hosoda.jpg' width=300 />
-</p>
-
 
 ## Note
 
